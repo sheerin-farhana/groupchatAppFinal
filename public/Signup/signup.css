@@ -1,0 +1,70 @@
+body {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #fccb90;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to bottom right,
+    rgba(252, 203, 144, 1),
+    rgba(213, 126, 235, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to bottom right,
+    rgba(252, 203, 144, 1),
+    rgba(213, 126, 235, 1)
+  );
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+
+.box-area {
+  width: 900px;
+  height: 550px;
+}
+
+/* .right-box{
+    padding: 40px 30px 40px 40px;
+} */
+
+::placeholder {
+  font-size: 16px;
+}
+
+#alert-container {
+  display: none;
+}
+
+/* For smaller screens */
+
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  .left-box {
+    height: 100px;
+    overflow: hidden;
+  }
+  .right-box {
+    padding: 20px;
+    width: max-content;
+    height: max-content;
+  }
+}

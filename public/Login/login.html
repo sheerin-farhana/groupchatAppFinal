@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *;">
+    <title>Login Page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="MDB-logo"
+                    src="https://www.clipartkey.com/mpngs/m/197-1979528_chat-room-apps-logo.png" alt="MDB Logo"
+                    draggable="false" height="40" /></a>
+            <p class="text-black fw-bold">CHAT NOW</p>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 gradient-custom">
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column  left-box"
+                 id="blue-color">
+                <div class="featured-image mb-3">
+                    <img src="../images/login.png" class="img-fluid p-3" id="login-image">
+                </div>
+                <p class="text-white fs-4" id="login-text">
+                    Login Now</p>
+                <small class="text-white text-wrap text-center fs-5" id="login-caption"
+                    >Connecting Conversations, Uniting Communities.</small>
+            </div>
+
+            <!-- login Form Container  -->
+
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-3">
+                        <p>Hello again!!!</p>
+                        <p>Elevate Your Conversations, Together in Every Chat. – Log in to chat!"</p>
+                    </div>
+                    <form id="signup-form">
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6 "
+                                placeholder="Enter Your Email" id="email-input" name="email" required>
+                        </div>
+                        <p class="alert-container">Email already exixts!!!</p>
+
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6 "
+                                placeholder="Enter Your password" id="password-input" name="password" required>
+                        </div>
+                        <div class="forgot d-flex justify-content-end mb-3">
+                            <small><a id="forgot-password-button" href="#">Forgot password?</a></small>
+                        </div>
+
+
+                        <div class="input-group mb-3">
+                            <button type="submit" class="btn btn-lg btn-primary w-100 fs-6"
+                                id="login-btn">login</button>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <small>Don't have an account? <a href="../Signup/signup.html">Signup</a></small>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+
+    <!-- Forgot password modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="forgot-password-modal">
+        <div class="modal-dialog  .modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="expenseForm">
+                        <div class="mb-3">
+                            <label for="forgot_pass_email" class="form-label">Email Id</label>
+                            <input type="text" class="form-control" id="forgot_pass_email" name="forgot_pass_email"
+                                required>
+                        </div>
+                    </form>
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="save-changes">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<footer class="fixed-bottom">
+    <div class="alert alert-success d-none text-center fw-bold" role="alert" id="success-alert">
+
+    </div>
+    <div class="alert alert-danger d-none text-center fw-bold" role="alert" id="failure-alert">
+
+    </div>
+</footer>
+    
+
+
+    
+    <!-- Include Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.3/axios.min.js" integrity="sha512-JWQFV6OCC2o2x8x46YrEeFEQtzoNV++r9im8O8stv91YwHNykzIS2TbvAlFdeH0GVlpnyd79W0ZGmffcRi++Bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+<!-- Include Bootstrap CSS (if needed) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Include jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+<script src="./login.js"></script>
+</body>
+
+</html>

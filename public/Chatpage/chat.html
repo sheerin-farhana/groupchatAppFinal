@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+
+    <link rel="stylesheet" href="./chat.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="MDB-logo"
+                    src="https://www.clipartkey.com/mpngs/m/197-1979528_chat-room-apps-logo.png" alt="MDB Logo"
+                    draggable="false" height="40" /></a>
+                    <p class="text-black fw-bold">CHAT NOW</p>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-black text-white btn-rounded" style="background-color: black;" href="../Login/login.html">Login</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-black text-white btn-rounded" style="background-color: black;" href="../Login/login.html">Signout</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-black text-white btn-rounded" style="background-color: black;"  href="../Signup/signup.html">Sign in</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-black text-white btn-rounded" style="background-color: black;" href="../ChatHomepage/home.html">Go Back</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <section class="gradient-custom min-vh-100 pt-5">
+        <div class="container py-5">
+    
+            <div class="row">
+    
+                <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+    
+                    <h5 class="font-weight-bold mb-3 text-center text-lg-start">Members</h5>
+    
+                    <div class="card mask-custom">
+                        <div class="card-body">
+    
+                            <ul class="list-unstyled mb-0" id="user-list" style="max-height: 400px; overflow-y: auto;">
+                              
+                            </ul>
+    
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="col-md-6 col-lg-7 col-xl-8 border rounded shadow overflow-auto p-3" style="height: 495px;">
+    
+                    <ul class="list-unstyled" id="message-list" data-simplebar>
+                        
+                    </ul>
+                </div>
+                    <div class="form-outline fixed-bottom d-flex justify-content-between">
+                        <textarea class="form-control me-2" rows="4" placeholder="Type your message here" id="message-input"
+                            required></textarea>
+                        <button type="button" class="btn btn-info btn-rounded" id="send-message-btn">Send</button>
+                    </div>
+                    
+                    <div class="form-outline fixed-bottom d-flex justify-content-between mt-3">
+                        <form action="#" method="POST" enctype="multipart/form-data" class="d-flex align-items-center">
+                            <label for="fileInput" class="me-2"><i class="bi bi-paperclip"></i></label>
+                            <input type="file" id="fileInput" name="fileInput" accept="image/*, video/*" class="form-control" style="flex: 1;">
+                            <button type="button" class="btn btn-info btn-rounded ms-2" id="send-image-btn">Send file</button>
+                        </form>
+
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Add Bootstrap JS (Optional, for some components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.3/axios.min.js"
+        integrity="sha512-JWQFV6OCC2o2x8x46YrEeFEQtzoNV++r9im8O8stv91YwHNykzIS2TbvAlFdeH0GVlpnyd79W0ZGmffcRi++Bw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    
+    <!-- Include Bootstrap CSS (if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+
+        <!-- SimpleBar JS -->
+        <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
+
+        <script src="./chat.js"></script>
+
+</body>
+</html>
+
+
