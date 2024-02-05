@@ -30,7 +30,7 @@ createGroupBtn.addEventListener("click", async () => {
 
     // Send a POST request to create a new group
     const response = await axios.post(
-      "http://localhost:3000/users/groups",
+      "http://13.201.42.84:3000/users/groups",
       {
         name: groupName,
         users: selectedUsers,
@@ -75,7 +75,7 @@ createGroupBtn.addEventListener("click", async () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const users = await axios.get("http://localhost:3000/users");
+    const users = await axios.get("http://13.201.42.84:3000/users");
     const usersArray = users.data.users;
 
     usersArray.forEach((user) => {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const userId = localStorage.getItem("userid");
 
-    const groups = await axios.get("http://localhost:3000/users/groups", {
+    const groups = await axios.get("http://13.201.42.84:3000/users/groups", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -190,7 +190,7 @@ function addUsersToUpdateGroupModal(user, isGroupMember) {
 async function updateGroupInDatabase(groupId, updatedGroupName, updatedUsers) {
   try {
     await axios.put(
-      `http://localhost:3000/users/groups/${groupId}`,
+      `http://13.201.42.84:3000/users/groups/${groupId}`,
       {
         name: updatedGroupName,
         users: updatedUsers,
@@ -218,7 +218,7 @@ async function handleUpdateButtonClick(groupId) {
   try {
     // Fetch group details including members
     const response = await axios.get(
-      `http://localhost:3000/users/groups/${groupId}/members`
+      `http://13.201.42.84:3000/users/groups/${groupId}/members`
     );
     const groupDetails = response.data;
 
@@ -226,7 +226,7 @@ async function handleUpdateButtonClick(groupId) {
     groupNameInput.value = groupDetails.groupName; // Assuming the API returns groupName
 
     // Fetch all users
-    const allUsersResponse = await axios.get("http://localhost:3000/users");
+    const allUsersResponse = await axios.get("http://13.201.42.84:3000/users");
     const allUsersArray = allUsersResponse.data.users;
 
     // Populate users in the update group modal
@@ -301,7 +301,7 @@ function adduserstogroupmodal(user) {
 
 // async function fetchNewMessages(lastSavedMessageId) {
 //   const response = await axios.get(
-//     `http://localhost:3000/users/messages?lastmessageid=${lastSavedMessageId}`,
+//     `http://13.201.42.84:3000/users/messages?lastmessageid=${lastSavedMessageId}`,
 //     {
 //       headers: {
 //         Authorization: "Bearer " + token,

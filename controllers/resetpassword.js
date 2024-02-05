@@ -28,7 +28,7 @@ const forgotpassword = async (req, res) => {
         from: "sheerinfarhana25@gmail.com",
         subject: "Reset password link",
         text: "Reset password",
-        html: `<a href="http://localhost:3000/password/reset/${id}">Reset password</a>`,
+        html: `<a href="http://13.201.42.84:3000/password/reset/${id}">Reset password</a>`,
       };
       sgmail
         .send(msg)
