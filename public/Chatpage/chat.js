@@ -30,7 +30,7 @@ async function sendMessages() {
   if (message) {
     console.log(message);
     sentMessage = await axios.post(
-      `http://localhost:3000/users/groups/${groupId}/messages`,
+      `http://13.201.42.84:3000/users/groups/${groupId}/messages`,
       {
         text: message,
       },
@@ -45,7 +45,7 @@ async function sendMessages() {
     formData.append("fileInput", imageInput.files[0]);
 
     sentMessage = await axios.post(
-      `http://localhost:3000/users/image/${groupId}`,
+      `http://13.201.42.84:3000/users/image/${groupId}`,
       formData,
       {
         headers: {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function showGroupmessages(groupid) {
   try {
     const groupUsers = await axios.get(
-      `http://localhost:3000/users/groups/${groupId}/members`
+      `http://13.201.42.84:3000/users/groups/${groupId}/members`
     );
 
     const groupUsersArray = groupUsers.data.groupMembers;
@@ -109,7 +109,7 @@ async function showGroupmessages(groupid) {
     });
 
     const groupMessages = await axios.get(
-      `http://localhost:3000/users/groups/${groupId}/messages`,
+      `http://13.201.42.84:3000/users/groups/${groupId}/messages`,
       {
         headers: {
           Authorization: "Bearer " + token,

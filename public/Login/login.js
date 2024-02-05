@@ -35,7 +35,7 @@ forgotPasswordBtn.addEventListener("click", async () => {
     // modal.hide();
     try {
       const emailData = await axios.post(
-        "http://localhost:3000/password/forgotPassword",
+        "http://13.201.42.84:3000/password/forgotPassword",
         { email: emailId.value }
       );
       console.log(emailData); //
@@ -67,7 +67,7 @@ loginBtn.addEventListener("click", async (e) => {
   } else {
     try {
       const userDetails = await axios.post(
-        "http://localhost:3000/users/login",
+        "http://13.201.42.84:3000/users/login",
         loginData
       );
 
