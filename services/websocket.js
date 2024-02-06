@@ -1,19 +1,3 @@
-// const socketService = (socket) => {
-//   console.log(`${socket.id} connected`);
-//   socket.on("new-group-message", ({ message, groupId, imageUrl, username }) => {
-//     console.log(message, groupId, imageUrl, username);
-//     socket.broadcast.emit("new-group-message", {
-//       message,
-//       groupId,
-//       imageUrl,
-//       username,
-//     });
-//   });
-// };
-
-// module.exports = socketService;
-
-// Modify the server-side handling of image messages
 const socketService = (socket) => {
   console.log(`${socket.id} connected`);
 
@@ -25,7 +9,7 @@ const socketService = (socket) => {
       // Check if it's an image message
       if (isImage) {
         socket.broadcast.emit("new-group-message", {
-          message: "", // Handle image messages appropriately
+          message: "",
           groupId,
           imageUrl,
           username,

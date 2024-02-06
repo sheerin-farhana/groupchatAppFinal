@@ -29,7 +29,7 @@ const postMessage = async (req, res, next) => {
 
 const getAllMessages = async (req, res, next) => {
   const userId = req.user.id;
-  const lastMessageId = req.query.lastmessageid || 0; // Default to 0 if not provided
+  const lastMessageId = req.query.lastmessageid || 0;
   console.log(lastMessageId);
 
   try {

@@ -1,4 +1,4 @@
-const { Group, GroupMembership } = require("../models/Group");
+const { Group } = require("../models/Group");
 const { User } = require("../models/User");
 const { Message } = require("../models/Message");
 
@@ -80,7 +80,7 @@ const getUserGroups = async (req, res, next) => {
       include: [
         {
           model: User,
-          through: { attributes: [] }, // Exclude extra attributes from the join table
+          through: { attributes: [] },
           where: { id: userId },
         },
       ],

@@ -42,7 +42,7 @@ signupBtn.addEventListener("click", async (e) => {
         password: password,
       };
       const users = await axios.post(
-        "http://13.201.42.84:3000/users/signup",
+        "http://localhost:3000/users/signup",
         userObject
       );
       successalert("signed up successfully");

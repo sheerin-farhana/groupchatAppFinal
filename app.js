@@ -66,7 +66,7 @@ Group.belongsTo(User, { foreignKey: "adminUserId" });
 cronService.archiveOldMessages();
 
 sequelize
-  .sync()
+  .sync({ force: true })
   .then((result) => {
     server.listen(3000, () => {
       console.log("app is running");
