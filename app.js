@@ -14,6 +14,7 @@ const { Group, GroupMembership } = require("./models/Group");
 const { ForgotPassword } = require("./models/ForgotPassword");
 
 const sequelize = require("./Utils/database");
+
 const userRoutes = require("./routes/user");
 const passwordroutes = require("./routes/password");
 
@@ -30,8 +31,6 @@ const io = new Server(server, {
 });
 
 io.on("connection", websocketService);
-
-module.exports = server;
 
 app.use(
   cors({
